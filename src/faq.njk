@@ -5,14 +5,14 @@ title: "Yacht Charter FAQ | Supernova Expeditions"
 description: "Answers about booking, pricing, what's included, packing, guest limits & departure from Anacortes for Supernova yacht expeditions in the San Juan Islands."
 eleventyComputed:
   schema: "{{ faq | faqSchema | safe }}"
+hero:
+  image: "landing-craft-helm.webp"
+  alt: "Driving the landing craft toward a forested shoreline"
+  h1: "Supernova Yacht Charter FAQ"
+  sub: "Quick answers on booking, what's included and life aboard. Still curious? Call <a href=\"tel:+13608003523\">360-800-3523</a>."
 ---
-<section class="bg-navy" style="padding:72px 0 56px">
-  <div class="wrap intro">
-    <span class="eyebrow">FAQ</span>
-    <h1 style="color:#fff">Supernova Yacht Charter FAQ</h1>
-    <p class="lead">Quick answers on booking, what's included and life aboard. Still curious? Call <a href="{{ site.phoneHref }}">{{ site.phone }}</a>.</p>
-  </div>
-</section>
+{% from "macros.njk" import book %}
+{% include "hero.njk" %}
 <section>
   <div class="wrap faq" style="max-width:860px">
     {% for g in faq %}

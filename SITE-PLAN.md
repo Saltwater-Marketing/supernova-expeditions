@@ -46,3 +46,12 @@ Footer: Gallery, FAQ, Privacy Policy, newsletter signup.
 ## Rule conflicts in carried over copy
 - Approved copy uses "Captain Paul" (first name only) throughout.
 - Bike itinerary copy is long; tightened into a 5 day timeline but kept Paul's wording where possible.
+
+## Nov 12 update to SWM standards
+- Banners: photo + H1 + one jump button only; distance line and subtitle in a white section under the banner. Every page has a photo banner.
+- One booking label ("Request Dates"), one button per section, phone as a text link. Header Book button visible on phones; floating mobile buttons removed.
+- White header with the logo at 80px (desktop) / 72px (phones); Gallery added to the menu.
+- Footer: no heading tags, Facebook as an icon, "Website by Saltwater Marketing" credit.
+- Gallery sorted by activity with tap to enlarge. FAQ schema on trip pages and the FAQ page; BreadcrumbList on trip pages.
+- Self-hosted fonts, inlined CSS, resized images, delayed tracking loader. Robots allow AI crawlers.
+- Home has a guest reviews placeholder until Paul has Google reviews to show.

@@ -3,17 +3,17 @@ layout: base.njk
 permalink: /scuba-diving-expeditions/
 title: "San Juan Islands Scuba Diving Trips | Supernova"
 description: "Multi day scuba & free diving expeditions in the San Juan Islands. Live boat diving from a landing craft, onboard compressor & chef meals. See dates."
-heroImage: pnw-scuba-reef.webp
+breadcrumb: true
+hero:
+  image: "pnw-scuba-reef.webp"
+  alt: "Lingcod resting among pink and orange anemones on a Pacific Northwest reef"
+  h1: "Scuba Diving Expeditions in the San Juan Islands"
+  jump: {"label": "See Dive Rates", "href": "#rates"}
+  kicker: "Scuba & free diving \u00b7 3 to 7 days"
+  sub: "Cold water, incredible life. Multi day dive trips with the yacht as basecamp and a live boat to get you into the tight spots."
 ---
-<section class="hero short" style="padding:0">
-  <img src="/images/pnw-scuba-reef.webp" alt="Lingcod resting among pink and orange anemones on a Pacific Northwest reef" width="1200" height="650" fetchpriority="high">
-  <div class="hero-content">
-    <span class="eyebrow">Scuba & free diving · 3 to 7 days</span>
-    <h1>Scuba Diving Expeditions in the San Juan Islands</h1>
-    <p class="lede">Cold water, incredible life. Multi day dive trips with the yacht as basecamp and a live boat to get you into the tight spots.</p>
-    <div class="btn-row"><a class="btn btn-accent" href="/calendar/?trip=scuba#request">Request Dive Dates</a><a class="btn btn-ghost-light" href="{{ site.phoneHref }}">Call {{ site.phone }}</a></div>
-  </div>
-</section>
+{% from "macros.njk" import book %}
+{% include "hero.njk" %}
 
 <section>
   <div class="wrap with-aside">
@@ -43,7 +43,7 @@ heroImage: pnw-scuba-reef.webp
       </ul>
 
       <h2>Diving questions</h2>
-      <div class="faq">
+      <div class="faq" data-faq-schema>
         <details><summary>Do I need to be certified?</summary><p>Yes, scuba divers need a current certification. [CONFIRM minimum certification level and cold water or drysuit experience requirements.]</p></details>
         <details><summary>Is there a dive guide?</summary><p>Scheduled scuba expeditions include a certified divemaster and exclusive use of the landing craft. On a private charter you can add a divemaster for $500 per night or dive self guided.</p></details>
         <details><summary>How do tank fills work?</summary><p>Supernova carries an onboard dive compressor, so tanks are refilled right on the boat between dives.</p></details>
@@ -62,23 +62,23 @@ heroImage: pnw-scuba-reef.webp
           <dt>Included</dt><dd>Captain, mate, chef, all meals and beverages, divemaster, landing craft, compressor fills, paddleboards and kayaks, fuel and cleaning</dd>
           <dt>Bring</dt><dd>Certification card, dive gear [CONFIRM], warm layers</dd>
         </dl>
-        <a class="btn btn-navy" href="/calendar/?trip=scuba#request">Check Dive Dates</a>
-        <p style="margin:14px 0 0;text-align:center">or call <a href="{{ site.phoneHref }}">{{ site.phone }}</a></p>
+        {{ book(site, "/calendar/?trip=scuba#request") }}
       </div>
     </aside>
   </div>
 </section>
 
-<section class="bg-sand">
+<section class="bg-sand" id="rates" style="scroll-margin-top:100px">
   <div class="wrap">
     <h2>Stateroom rates for dive expeditions</h2>
     <p>Priced per stateroom, per night. Each room sleeps two.</p>
-    <table class="rate-table" style="max-width:560px">
-      <tr><td>Master Stateroom</td><td>$2,500 / night</td></tr>
-      <tr><td>The Mermaid Room</td><td>$1,900 / night</td></tr>
-      <tr><td>The Salmon Room</td><td>$1,700 / night</td></tr>
-    </table>
-    <p><a href="/pricing/">Full pricing and terms →</a></p>
+    <div class="price-grid">
+      <div class="price-card"><h3>Master Stateroom</h3><p class="from">$2,500 <small>per night</small></p><p>King bed, dual sinks and the largest private bathroom and shower.</p></div>
+      <div class="price-card"><h3>The Mermaid Room</h3><p class="from">$1,900 <small>per night</small></p><p>Queen bed in the bow with a private bathroom and full shower.</p></div>
+      <div class="price-card"><h3>The Salmon Room</h3><p class="from">$1,700 <small>per night</small></p><p>Queen bed, private bathroom with shower, calm and cozy.</p></div>
+    </div>
+    {{ book(site, "/calendar/?trip=scuba#request") }}
+    <p style="margin-top:18px"><a class="text-link" href="/pricing/">Full pricing and terms</a></p>
   </div>
 </section>
 
@@ -86,8 +86,8 @@ heroImage: pnw-scuba-reef.webp
   <div class="wrap">
     <h2>More ways to explore</h2>
     <div class="cards two">
-      <a class="card" href="/private-charters/"><div class="card-body"><h3>Private Charters</h3><p>Charter the whole boat for your dive club or family and add a divemaster and the landing craft.</p><span class="more">Private charters</span></div></a>
-      <a class="card" href="/mountain-bike-expeditions/"><div class="card-body"><h3>Mountain Bike Expeditions</h3><p>Same basecamp, different adventure: island singletrack by day.</p><span class="more">Bike expeditions</span></div></a>
+      <a class="card" href="/private-charters/"><div class="card-body"><h3>Private Charters</h3><p>Charter the whole boat for your dive club or family and add a divemaster and the landing craft.</p><span class="more">Learn more</span></div></a>
+      <a class="card" href="/mountain-bike-expeditions/"><div class="card-body"><h3>Mountain Bike Expeditions</h3><p>Same basecamp, different adventure: island singletrack by day.</p><span class="more">Learn more</span></div></a>
     </div>
   </div>
 </section>

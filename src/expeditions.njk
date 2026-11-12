@@ -3,16 +3,15 @@ layout: base.njk
 permalink: /expeditions/
 title: "Yacht Expeditions in the San Juan Islands | Supernova"
 description: "Multi day yacht expeditions from Anacortes, WA. Scuba diving trips, private island charters & mountain bike expeditions aboard Supernova. Pick yours."
-heroImage: kayak-river-mouth.webp
+hero:
+  image: "kayak-river-mouth.webp"
+  alt: "Blue kayak on a river mouth beach below forested mountains"
+  h1: "Yacht Expeditions in the San Juan Islands & Beyond"
+  jump: {"label": "See the Expeditions", "href": "#trips"}
+  sub: "Wake up somewhere new, get ashore by landing craft and spend the day doing what you came for."
 ---
-<section class="hero short" style="padding:0">
-  <img src="/images/kayak-river-mouth.webp" alt="Blue kayak on a river mouth beach below forested mountains" width="1800" height="1350" fetchpriority="high">
-  <div class="hero-content">
-    <span class="eyebrow">Expeditions</span>
-    <h1>Yacht Expeditions in the San Juan Islands & Beyond</h1>
-    <p class="lede">Wake up somewhere new, get ashore by landing craft and spend the day doing what you came for.</p>
-  </div>
-</section>
+{% from "macros.njk" import book %}
+{% include "hero.njk" %}
 
 <section>
   <div class="wrap intro">
@@ -20,17 +19,17 @@ heroImage: kayak-river-mouth.webp
     <p>That's what a Supernova trip feels like. Every expedition is small, private and run by Captain Paul, who knows these waters from Anacortes to the Gulf Islands and Desolation Sound.</p>
     <p>We run multi day trips only. Join a scheduled expedition by the stateroom, or charter the whole boat for your group.</p>
   </div>
-  <div class="wrap cards">
+  <div class="wrap cards" id="trips" style="scroll-margin-top:110px">
     <a class="card" href="/scuba-diving-expeditions/">
-      <img src="/images/pnw-scuba-reef.webp" alt="Lingcod among anemones on a cold water reef" width="1200" height="650" loading="lazy">
+      {% img "pnw-scuba-reef.webp", "Lingcod among anemones on a cold water reef", "(max-width:640px) 100vw, 380px", "lazy", "" %}
       <div class="card-body"><span class="meta">3 to 7 days</span><h3>Scuba Diving Expeditions</h3><p>Live boat diving from our landing craft, an onboard compressor and hot showers between dives. Free divers welcome.</p><span class="more">Learn more</span></div>
     </a>
     <a class="card" href="/private-charters/">
-      <img src="/images/beach-landing-paddleboards.webp" alt="Paddleboard and kayak on a beach with Supernova offshore" width="1800" height="1350" loading="lazy">
+      {% img "beach-landing-paddleboards.webp", "Paddleboard and kayak on a beach with Supernova offshore", "(max-width:640px) 100vw, 380px", "lazy", "" %}
       <div class="card-body"><span class="meta">2 nights and up</span><h3>Private Charters</h3><p>The whole boat for your group. Paddle, hike, eat, explore. Add a private chef, culinary voyage or corporate retreat.</p><span class="more">Learn more</span></div>
     </a>
     <a class="card" href="/mountain-bike-expeditions/">
-      <img src="/images/mountain-bike-ridge.webp" alt="Mountain biker riding a ridge above the sea" width="1400" height="761" loading="lazy">
+      {% img "mountain-bike-ridge.webp", "Mountain biker riding a ridge above the sea", "(max-width:640px) 100vw, 380px", "lazy", "" %}
       <div class="card-body"><span class="meta">5 days · 4 nights</span><h3>Mountain Bike Expeditions</h3><p>Island and Vancouver Island trail systems by day, a hot shower and chef dinner aboard by night.</p><span class="more">Learn more</span></div>
     </a>
   </div>
@@ -48,9 +47,10 @@ heroImage: kayak-river-mouth.webp
         <li>Departure and return in Anacortes, WA</li>
       </ul>
       <p>See <a href="/pricing/">pricing and terms</a> for exactly what each trip type includes.</p>
+      {{ book(site) }}
     </div>
-    <img src="/images/supernova-at-anchor.webp" alt="Supernova at anchor beside a forested shoreline" width="1800" height="1350" loading="lazy">
+    {% img "supernova-at-anchor.webp", "Supernova at anchor beside a forested shoreline", "(max-width:640px) 100vw, 380px", "lazy", "" %}
   </div>
 </section>
 
-{% include "cta.njk" %}
+{% set ctaImage = "swimming-rocks.webp" %}{% include "cta.njk" %}

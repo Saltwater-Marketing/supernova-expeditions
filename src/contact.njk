@@ -3,14 +3,14 @@ layout: base.njk
 permalink: /contact/
 title: "Contact Supernova Expeditions | Anacortes, WA"
 description: "Contact Supernova Expeditions in Anacortes, WA. Call 360-800-3523 or send a message about scuba, private charter or mountain bike yacht expeditions."
+hero:
+  image: "flybridge-solar-aerial.webp"
+  alt: "Aerial view of Supernova tied up in the marina"
+  h1: "Contact Supernova Expeditions"
+  sub: "Questions, custom trips or just want to talk it through? Reach Captain Paul directly."
 ---
-<section class="bg-navy" style="padding:72px 0 56px">
-  <div class="wrap intro">
-    <span class="eyebrow">Contact</span>
-    <h1 style="color:#fff">Contact Supernova Expeditions</h1>
-    <p class="lead">Questions, custom trips or just want to talk it through? Reach Captain Paul directly.</p>
-  </div>
-</section>
+{% from "macros.njk" import book %}
+{% include "hero.njk" %}
 <section>
   <div class="wrap split" style="align-items:start">
     <div>
@@ -18,8 +18,8 @@ description: "Contact Supernova Expeditions in Anacortes, WA. Call 360-800-3523 
       <p><strong>Phone:</strong> <a href="{{ site.phoneHref }}">{{ site.phone }}</a><br>
       <strong>Email:</strong> <a href="mailto:{{ site.email }}">{{ site.email }}</a><br>
       <strong>Office:</strong> {{ site.address.street }}, {{ site.address.city }}, {{ site.address.state }}</p>
-      <p><a href="{{ site.facebook }}" target="_blank" rel="noopener">Follow us on Facebook</a></p>
-      <h3 style="margin-top:28px">Departure point</h3>
+      <div class="contact-social">{% include "social.njk" %}</div>
+      <h2 style="margin-top:36px;font-size:1.5rem">Departure point</h2>
       <p>All trips start and end in Anacortes, WA. [CONFIRM marina / dock name and parking details.] Alternative pickups available for an added fuel charge.</p>
       <iframe title="Map of Supernova Expeditions in Anacortes, WA" src="https://www.google.com/maps?q=910+11th+Street,+Anacortes,+WA&output=embed" width="100%" height="300" style="border:0;border-radius:10px" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
     </div>
@@ -36,7 +36,7 @@ description: "Contact Supernova Expeditions in Anacortes, WA. Call 360-800-3523 
         <div class="field full"><label for="c-msg">Message</label><textarea id="c-msg" name="message" rows="5" required></textarea></div>
         <div class="field full"><label class="consent"><input type="checkbox" name="sms_consent" value="yes"> I agree to receive text messages from Supernova Expeditions about my inquiry. Message and data rates may apply. Message frequency varies. Reply STOP to opt out or HELP for help.</label></div>
       </div>
-      <button class="btn btn-navy" type="submit" style="width:100%">Send Message</button>
+      <button class="btn btn-book" type="submit" style="width:100%">Send Message</button>
     </form>
   </div>
 </section>

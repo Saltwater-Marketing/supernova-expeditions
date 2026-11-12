@@ -3,16 +3,17 @@ layout: base.njk
 permalink: /pricing/
 title: "Yacht Charter Pricing & Terms | Supernova Expeditions"
 description: "Supernova Expeditions pricing: per stateroom rates for scheduled trips, whole boat private charters from $3,900/night & dry boat rentals. Anacortes, WA."
+hero:
+  image: "main-salon.webp"
+  alt: "Supernova's main salon with built in seating and wide windows"
+  h1: "Supernova Yacht Charter Pricing"
+  jump: {"label": "See the Rates", "href": "#rates"}
+  sub: "Clear rates for every way to travel aboard. Questions or a custom quote? Call <a href=\"tel:+13608003523\">360-800-3523</a>."
 ---
-<section class="bg-navy" style="padding:72px 0 56px">
-  <div class="wrap intro">
-    <span class="eyebrow">Pricing & terms</span>
-    <h1 style="color:#fff">Supernova Yacht Charter Pricing</h1>
-    <p class="lead">Clear rates for every way to travel aboard. Questions or a custom quote? Call <a href="{{ site.phoneHref }}">{{ site.phone }}</a>.</p>
-  </div>
-</section>
+{% from "macros.njk" import book %}
+{% include "hero.njk" %}
 
-<section>
+<section id="rates" style="scroll-margin-top:100px">
   <div class="wrap">
     <span class="eyebrow">Scheduled expeditions</span>
     <h2>Priced per stateroom, not per person</h2>

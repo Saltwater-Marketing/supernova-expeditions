@@ -3,17 +3,17 @@ layout: base.njk
 permalink: /private-charters/
 title: "Private Yacht Charters San Juan Islands | Supernova"
 description: "Charter Supernova for your group. Explore the San Juan Islands, paddleboard, hike old growth forest & enjoy a private chef. Custom trips from Anacortes."
-heroImage: beach-landing-paddleboards.webp
+breadcrumb: true
+hero:
+  image: "beach-landing-paddleboards.webp"
+  alt: "Paddleboard and kayak on a pebble beach with Supernova anchored offshore"
+  h1: "Private Yacht Charters in the San Juan Islands"
+  jump: {"label": "See Charter Details", "href": "#details"}
+  kicker: "Whole boat \u00b7 2 nights and up"
+  sub: "Your group, your pace, your plan. We'll help you design a trip around the things you want to do."
 ---
-<section class="hero short" style="padding:0">
-  <img src="/images/beach-landing-paddleboards.webp" alt="Paddleboard and kayak on a pebble beach with Supernova anchored offshore" width="1800" height="1350" fetchpriority="high">
-  <div class="hero-content">
-    <span class="eyebrow">Whole boat · 2 nights and up</span>
-    <h1>Private Yacht Charters in the San Juan Islands</h1>
-    <p class="lede">Your group, your pace, your plan. We'll help you design a trip around the things you want to do.</p>
-    <div class="btn-row"><a class="btn btn-accent" href="/calendar/?trip=private#request">Request Charter Dates</a><a class="btn btn-ghost-light" href="{{ site.phoneHref }}">Call {{ site.phone }}</a></div>
-  </div>
-</section>
+{% from "macros.njk" import book %}
+{% include "hero.njk" %}
 
 <section>
   <div class="wrap with-aside">
@@ -56,15 +56,14 @@ heroImage: beach-landing-paddleboards.webp
       </ul>
 
       <h2>Charter questions</h2>
-      <div class="faq">
+      <div class="faq" data-faq-schema>
         <details><summary>How many people can come?</summary><p>Crewed private charters are limited to 6 paying guests under U.S. Coast Guard rules. Dry boat charters can sleep 8 in the staterooms plus up to 4 more on the top deck.</p></details>
-        <details><summary>What's the minimum trip length?</summary><p>Two nights and three days. Private expeditions can run up to 30 days.</p></details>
         <details><summary>Is food included?</summary><p>The base charter is self catered. Add a private chef for chef prepared meals with house beer, wine and standard spirits.</p></details>
         <details><summary>Do we have to start in Anacortes?</summary><p>All trips start and end in Anacortes, WA. Alternative pickup and drop off locations are available for an added fuel charge.</p></details>
         <details><summary>Can we go into Canada?</summary><p>Yes. Longer charters regularly cross into British Columbia's Gulf Islands. Every guest needs valid travel documents for entering Canada and returning to the U.S.</p></details>
       </div>
     </div>
-    <aside>
+    <aside id="details" style="scroll-margin-top:110px">
       <div class="details">
         <h3>Charter details</h3>
         <dl>
@@ -75,8 +74,7 @@ heroImage: beach-landing-paddleboards.webp
           <dt>Included</dt><dd>Captain and mate, 4 paddleboards, 2 kayaks, 15 foot tender</dd>
           <dt>Add ons</dt><dd>Private chef from $800/night, landing craft $500/night, divemaster $500/night</dd>
         </dl>
-        <a class="btn btn-navy" href="/calendar/?trip=private#request">Request Dates</a>
-        <p style="margin:14px 0 0;text-align:center">or call <a href="{{ site.phoneHref }}">{{ site.phone }}</a></p>
+        {{ book(site, "/calendar/?trip=private#request") }}
       </div>
     </aside>
   </div>
@@ -84,10 +82,10 @@ heroImage: beach-landing-paddleboards.webp
 
 <section class="bg-sand">
   <div class="wrap mosaic" style="margin-top:0">
-    <figure class="w2 h2"><img src="/images/old-growth-cedar.webp" alt="Family at the base of a giant old growth cedar" width="1350" height="1800" loading="lazy"></figure>
-    <figure><img src="/images/chef-salmon.webp" alt="Fresh salmon fillets in Supernova's galley" width="1350" height="1800" loading="lazy"></figure>
-    <figure><img src="/images/island-cabin.webp" alt="Historic log cabin on a remote island shore" width="1800" height="1350" loading="lazy"></figure>
-    <figure class="w2"><img src="/images/swimming-rocks.webp" alt="Guests swimming off granite rocks" width="1800" height="1350" loading="lazy"></figure>
+    <figure class="w2 h2">{% img "old-growth-cedar.webp", "Family at the base of a giant old growth cedar", "(max-width:760px) 50vw, 300px", "lazy", "" %}</figure>
+    <figure>{% img "chef-salmon.webp", "Fresh salmon fillets in Supernova's galley", "(max-width:760px) 50vw, 300px", "lazy", "" %}</figure>
+    <figure>{% img "island-cabin.webp", "Historic log cabin on a remote island shore", "(max-width:760px) 50vw, 300px", "lazy", "" %}</figure>
+    <figure class="w2">{% img "swimming-rocks.webp", "Guests swimming off granite rocks", "(max-width:760px) 50vw, 300px", "lazy", "" %}</figure>
   </div>
 </section>
 
@@ -95,8 +93,8 @@ heroImage: beach-landing-paddleboards.webp
   <div class="wrap">
     <h2>More ways to explore</h2>
     <div class="cards two">
-      <a class="card" href="/scuba-diving-expeditions/"><div class="card-body"><h3>Scuba Diving Expeditions</h3><p>Live boat diving into remote San Juan Islands dive sites.</p><span class="more">Dive expeditions</span></div></a>
-      <a class="card" href="/mountain-bike-expeditions/"><div class="card-body"><h3>Mountain Bike Expeditions</h3><p>Five days riding island and Vancouver Island trail systems.</p><span class="more">Bike expeditions</span></div></a>
+      <a class="card" href="/scuba-diving-expeditions/"><div class="card-body"><h3>Scuba Diving Expeditions</h3><p>Live boat diving into remote San Juan Islands dive sites.</p><span class="more">Learn more</span></div></a>
+      <a class="card" href="/mountain-bike-expeditions/"><div class="card-body"><h3>Mountain Bike Expeditions</h3><p>Five days riding island and Vancouver Island trail systems.</p><span class="more">Learn more</span></div></a>
     </div>
   </div>
 </section>

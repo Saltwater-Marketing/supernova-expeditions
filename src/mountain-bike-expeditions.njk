@@ -3,18 +3,18 @@ layout: base.njk
 permalink: /mountain-bike-expeditions/
 title: "Mountain Bike & Yacht Expeditions | Supernova"
 description: "Ride the Salish Sea: a 5 day mountain bike & yacht expedition through the San Juan Islands & Vancouver Island. Landing craft to the trailhead. Book now."
-heroImage: mountain-bike-ridge.webp
 ogImage: mountain-bike-ridge.webp
+breadcrumb: true
+hero:
+  image: "mountain-bike-ridge.webp"
+  alt: "Mountain biker on a rocky ridge trail above the Salish Sea"
+  h1: "Mountain Bike Expeditions in the San Juan Islands & British Columbia"
+  jump: {"label": "See the Itinerary", "href": "#itinerary"}
+  kicker: "Ride the Salish Sea \u00b7 Methow Cycle \u00d7 Supernova Expeditions"
+  sub: "Ride by day. Yacht by night. Five days, two countries and a different trail system every day."
 ---
-<section class="hero short" style="padding:0">
-  <img src="/images/mountain-bike-ridge.webp" alt="Mountain biker on a rocky ridge trail above the Salish Sea" width="1400" height="761" fetchpriority="high">
-  <div class="hero-content">
-    <span class="eyebrow">Ride the Salish Sea · Methow Cycle × Supernova Expeditions</span>
-    <h1>Mountain Bike Expeditions in the San Juan Islands & British Columbia</h1>
-    <p class="lede">Ride by day. Yacht by night. Five days, two countries and a different trail system every day.</p>
-    <div class="btn-row"><a class="btn btn-accent" href="/calendar/?trip=bike#request">Request a Spot</a><a class="btn btn-ghost-light" href="#itinerary">See the Itinerary</a></div>
-  </div>
-</section>
+{% from "macros.njk" import book %}
+{% include "hero.njk" %}
 
 <section>
   <div class="wrap with-aside">
@@ -42,14 +42,13 @@ ogImage: mountain-bike-ridge.webp
           <dt>Trails</dt><dd>Moran State Park, Hartland & Mount Work, Mount Tzouhalem, Maple Mountain</dd>
           <dt>Bring</dt><dd>Your mountain bike, riding gear and travel documents for Canada</dd>
         </dl>
-        <a class="btn btn-navy" href="/calendar/?trip=bike#request">Check Ride Dates</a>
-        <p style="margin:14px 0 0;text-align:center">or call <a href="{{ site.phoneHref }}">{{ site.phone }}</a></p>
+        {{ book(site, "/calendar/?trip=bike#request") }}
       </div>
     </aside>
   </div>
 </section>
 
-<section class="bg-navy">
+<section class="bg-sand">
   <div class="wrap split">
     <div>
       <span class="eyebrow">Built for riders</span>
@@ -65,11 +64,11 @@ ogImage: mountain-bike-ridge.webp
         <li>Onboard beverages and refreshments</li>
       </ul>
     </div>
-    <img src="/images/landing-craft-helm.webp" alt="Driving the landing craft toward a forested shoreline" width="1800" height="1350" loading="lazy">
+    {% img "landing-craft-helm.webp", "Driving the landing craft toward a forested shoreline", "(max-width:860px) 100vw, 560px", "lazy", "" %}
   </div>
 </section>
 
-<section id="itinerary">
+<section id="itinerary" style="scroll-margin-top:100px">
   <div class="wrap" style="max-width:860px">
     <span class="eyebrow">Sample itinerary</span>
     <h2>Five days in the Salish Sea</h2>
@@ -109,10 +108,10 @@ ogImage: mountain-bike-ridge.webp
   </div>
 </section>
 
-<section class="bg-sand">
+<section>
   <div class="wrap" style="max-width:860px">
     <h2>Bike expedition questions</h2>
-    <div class="faq">
+    <div class="faq" data-faq-schema>
       <details><summary>Do I need to bring my own bike?</summary><p>Yes. Bring your mountain bike, riding gear and a sense of adventure. We take care of the rest.</p></details>
       <details><summary>How hard is the riding?</summary><p>We tailor each day to the group's ability and energy, with options to ride longer or head back to the boat early. [CONFIRM rider experience requirements.]</p></details>
       <details><summary>Do I need a passport?</summary><p>The route crosses into British Columbia, so every rider needs valid travel documents for entering Canada and returning to the U.S.</p></details>
@@ -123,4 +122,4 @@ ogImage: mountain-bike-ridge.webp
 
 {% set ctaTitle = "Four riders. Two countries. One expedition yacht." %}
 {% set ctaText = "Space is strictly limited. Request your dates or call Captain Paul to talk through the ride." %}
-{% include "cta.njk" %}
+{% set ctaHref = "/calendar/?trip=bike#request" %}{% set ctaImage = "landing-craft-inlet.webp" %}{% include "cta.njk" %}

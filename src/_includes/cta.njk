@@ -1,14 +1,9 @@
-<section class="{{ ctaBg or '' }}">
-  <div class="wrap">
-    <div class="callout">
-      <div>
-        <h2>{{ ctaTitle or "Ready to plan your expedition?" }}</h2>
-        <p>{{ ctaText or "Check open dates on the trip calendar, or call Captain Paul to talk through what you want to do." }}</p>
-      </div>
-      <div class="btn-row">
-        <a class="btn btn-accent" href="/calendar/">See the Trip Calendar</a>
-        <a class="btn btn-ghost-light" href="{{ site.phoneHref }}">Call {{ site.phone }}</a>
-      </div>
-    </div>
+{#- Final call to action: photo band, one booking button, phone as a text link -#}
+<section class="cta-band">
+  {% set _ci = ctaImage or "kayak-view-supernova.webp" %}{% img _ci, "", "100vw", "lazy", "cta-bg" %}
+  <div class="wrap cta-inner">
+    <h2>{{ ctaTitle or "Ready to plan your expedition?" }}</h2>
+    <p>{{ ctaText or "Pick your dates on the trip calendar and Captain Paul will get back to you, usually within a day." }}</p>
+    <p class="book-line"><a class="btn btn-book" href="{{ ctaHref or site.bookHref }}">{{ site.bookLabel }}</a> <span class="or-call">or call <a href="{{ site.phoneHref }}">{{ site.phone }}</a></span></p>
   </div>
 </section>

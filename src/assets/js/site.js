@@ -36,3 +36,18 @@
   modal.addEventListener('click', function (e) { if (e.target === modal) hide(); });
   document.addEventListener('keydown', function (e) { if (e.key === 'Escape') hide(); });
 })();
+
+// Gallery lightbox
+(function () {
+  var lb = document.getElementById('lightbox'); if (!lb) return;
+  var btns = [].slice.call(document.querySelectorAll('.g-grid button')), i = 0;
+  var img = document.getElementById('lb-img'), cap = document.getElementById('lb-cap');
+  function open(n) { i = (n + btns.length) % btns.length; img.src = btns[i].dataset.full; img.alt = btns[i].dataset.caption; cap.textContent = btns[i].dataset.caption; lb.hidden = false; }
+  function close() { lb.hidden = true; btns[i].focus(); }
+  btns.forEach(function (b, n) { b.addEventListener('click', function () { open(n); }); });
+  lb.querySelector('.lb-close').addEventListener('click', close);
+  lb.querySelector('.lb-prev').addEventListener('click', function () { open(i - 1); });
+  lb.querySelector('.lb-next').addEventListener('click', function () { open(i + 1); });
+  lb.addEventListener('click', function (e) { if (e.target === lb) close(); });
+  document.addEventListener('keydown', function (e) { if (lb.hidden) return; if (e.key === 'Escape') close(); if (e.key === 'ArrowLeft') open(i - 1); if (e.key === 'ArrowRight') open(i + 1); });
+})();

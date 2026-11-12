@@ -1,0 +1,34 @@
+[
+  { "id": "island-adventures", "title": "Island Adventures", "link": "/private-charters/", "linkText": "Private charters", "photos": [
+    ["beach-landing-paddleboards.webp", "Paddleboard and kayak on a pebble beach with Supernova anchored offshore"],
+    ["kayak-river-mouth.webp", "Blue kayak pulled up on a river mouth beach below forested mountains"],
+    ["swimming-rocks.webp", "Guests swimming off granite rocks in a clear lake"],
+    ["old-growth-cedar.webp", "Family at the base of a giant old growth cedar"],
+    ["island-cabin.webp", "Historic log cabin in a meadow on a remote island"],
+    ["kayak-view-supernova.webp", "View from a kayak of Supernova anchored on glassy water"],
+    ["anchorage-landing-craft.webp", "Landing craft and paddleboards on a rocky beach with Supernova in the bay"]
+  ]},
+  { "id": "biking-wildlife", "title": "Biking & Wildlife", "link": "/mountain-bike-expeditions/", "linkText": "Mountain bike expeditions", "photos": [
+    ["mountain-bike-ridge.webp", "Mountain biker on a rocky ridge trail high above the Salish Sea"],
+    ["humpback-whale-tail.webp", "Humpback whale tail lifting out of the water"]
+  ]},
+  { "id": "the-boat", "title": "The Boat", "link": "/the-boat/", "linkText": "Tour the boat", "photos": [
+    ["supernova-at-anchor.webp", "Supernova at anchor beside a forested shore"],
+    ["flybridge-solar-aerial.webp", "Aerial view of Supernova's flybridge and solar panels"],
+    ["landing-craft-inlet.webp", "The landing craft beached in a green mountain inlet"],
+    ["landing-craft-helm.webp", "At the helm of the landing craft"],
+    ["main-salon.webp", "Supernova's main salon with built in seating and wide windows"],
+    ["pilothouse.webp", "The pilothouse helm with Garmin electronics"],
+    ["flybridge-lounge.webp", "Enclosed flybridge lounge with wraparound windows"],
+    ["flybridge-lounge-2.webp", "Flybridge seating and table"],
+    ["master-suite.webp", "Master Suite with king bed"],
+    ["mermaid-room.webp", "The Mermaid Room's queen bed under the glass mermaid headboard"],
+    ["salmon-room.webp", "The Salmon Room with queen bed"],
+    ["orca-room-bunks.webp", "The Orca Room's bunk beds"]
+  ]},
+  { "id": "food-aboard", "title": "Food Aboard", "link": "/pricing/#private", "linkText": "Private chef add on", "photos": [
+    ["guests-dinner-table.webp", "Guests sharing a meal around the table in the enclosed flybridge"],
+    ["chef-salmon.webp", "Fresh salmon fillets ready for dinner in the galley"],
+    ["galley-cookies.webp", "Fresh cookies coming out of Supernova's galley"]
+  ]}
+]

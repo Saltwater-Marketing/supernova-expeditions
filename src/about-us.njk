@@ -3,15 +3,16 @@ layout: base.njk
 permalink: /about-us/
 title: "Meet Captain Paul | Supernova Expeditions"
 description: "Captain Paul is a USCG 100 ton Master Captain, diver & pilot who runs every Supernova expedition from Anacortes, WA with first mate Nova. Meet the crew."
-heroImage: captain-paul.webp
+hero:
+  image: "captain-paul.webp"
+  alt: "Captain Paul on the deck of Supernova"
+  h1: "Meet Captain Paul & the Supernova Crew"
+  pos: "center 30%"
+  kicker: "About us"
+  sub: "A USCG Master Captain, diver and pilot who runs every trip personally, with first mate Nova in the galley."
 ---
-<section class="hero short" style="padding:0">
-  <img src="/images/captain-paul.webp" alt="Captain Paul on the deck of Supernova" width="1800" height="1350" fetchpriority="high" style="object-position:center 30%">
-  <div class="hero-content">
-    <span class="eyebrow">About us</span>
-    <h1>Meet Captain Paul & the Supernova Crew</h1>
-  </div>
-</section>
+{% from "macros.njk" import book %}
+{% include "hero.njk" %}
 
 <section>
   <div class="wrap with-aside">
@@ -38,7 +39,7 @@ heroImage: captain-paul.webp
           <li>Scuba diver</li>
           <li>Commercial instrument rated pilot, 3,000+ hours</li>
         </ul>
-        <a class="btn btn-navy" href="/contact/">Talk to Captain Paul</a>
+        <p style="margin:16px 0 0"><a class="text-link" href="/contact/">Talk to Captain Paul</a></p>
       </div>
     </aside>
   </div>
@@ -46,12 +47,12 @@ heroImage: captain-paul.webp
 
 <section class="bg-sand">
   <div class="wrap split">
-    <img src="/images/galley-cookies.webp" alt="Fresh cookies coming out of Supernova's galley" width="1350" height="1800" class="tall" loading="lazy">
+    {% img "galley-cookies.webp", "Fresh cookies coming out of Supernova's galley", "(max-width:860px) 100vw, 560px", "lazy", "tall" %}
     <div>
       <h2>Small trips, run personally</h2>
       <p>Every expedition is run by Paul and his crew, with no more than six guests on crewed trips. That means plans that bend around weather, energy and what the group is excited about.</p>
       <p>Ask us anything. We'd love to help you plan your trip.</p>
-      <div class="btn-row"><a class="btn btn-navy" href="/calendar/">See Open Dates</a><a class="btn btn-ghost" href="{{ site.phoneHref }}">Call {{ site.phone }}</a></div>
+      {{ book(site) }}
     </div>
   </div>
 </section>

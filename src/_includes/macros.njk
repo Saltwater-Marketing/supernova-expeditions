@@ -1,0 +1,3 @@
+{%- macro book(site, href) -%}
+<p class="book-line"><a class="btn btn-book" href="{{ href or site.bookHref }}">{{ site.bookLabel }}</a> <span class="or-call">or call <a href="{{ site.phoneHref }}">{{ site.phone }}</a></span></p>
+{%- endmacro -%}

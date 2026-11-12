@@ -3,17 +3,16 @@ layout: base.njk
 permalink: /the-boat/
 title: "Meet Supernova, 78' Expedition Yacht | Supernova"
 description: "Tour Supernova, a 78 foot expedition yacht with 4 private staterooms & showers, dive compressor, landing craft, water toys & Starlink. Anacortes, WA."
-heroImage: supernova-at-anchor.webp
+hero:
+  image: "anchorage-landing-craft.webp"
+  alt: "Supernova anchored in a bay with the landing craft and paddleboards on the beach"
+  h1: "Meet Supernova, Our 78 Foot Expedition Yacht"
+  jump: {"label": "See the Staterooms", "href": "#staterooms"}
+  sub: "Rugged exploration meets real comfort. Your basecamp, restaurant and transportation for the trip."
 ---
 {% from "icons.njk" import icon %}
-<section class="hero short" style="padding:0">
-  <img src="/images/supernova-at-anchor.webp" alt="Supernova anchored beside a forested shore with the landing craft tied alongside" width="1800" height="1350" fetchpriority="high">
-  <div class="hero-content">
-    <span class="eyebrow">The boat</span>
-    <h1>Meet Supernova, Our 78 Foot Expedition Yacht</h1>
-    <p class="lede">Rugged exploration meets real comfort. Your basecamp, restaurant and transportation for the trip.</p>
-  </div>
-</section>
+{% from "macros.njk" import book %}
+{% include "hero.njk" %}
 
 <section>
   <div class="wrap split">
@@ -23,7 +22,7 @@ heroImage: supernova-at-anchor.webp
       <p>Whether you're diving remote corners of the San Juans or watching the sunset from the flybridge, she's your floating home for the trip.</p>
     </div>
     <div class="video" data-src="https://www.youtube-nocookie.com/embed/SsU-7J9OtSg?autoplay=1&rel=0" data-title="Video walk through of Supernova">
-      <img src="/images/main-salon.webp" alt="Supernova's main salon with built in seating and wide windows" width="1600" height="1067" loading="lazy">
+      {% img "main-salon.webp", "Supernova's main salon with built in seating and wide windows", "(max-width:760px) 100vw, 560px", "lazy", "" %}
       <button class="play" aria-label="Play the Supernova video walk through"></button>
     </div>
   </div>
@@ -51,47 +50,48 @@ heroImage: supernova-at-anchor.webp
       <p>When the trip calls for it, we tow our rugged 21 foot aluminum landing craft. Twin 140 HP outboards, seating for up to 10, and a front loading bow gate for beach landings and easy water entry for divers.</p>
       <p>She's outfitted with radar, downriggers and pot pullers for shore excursions, live boat dive support, bike transport and hauling in your catch.</p>
     </div>
-    <img src="/images/landing-craft-inlet.webp" alt="The 21 foot aluminum landing craft beached in a mountain inlet" width="1800" height="1350" loading="lazy">
+    {% img "landing-craft-inlet.webp", "The 21 foot aluminum landing craft beached in a mountain inlet", "(max-width:760px) 100vw, 560px", "lazy", "" %}
   </div>
 </section>
 
-<section class="bg-sand">
+<section class="bg-sand" id="staterooms" style="scroll-margin-top:100px">
   <div class="wrap">
     <h2>The staterooms</h2>
     <p>Four staterooms, each with its own bathroom and shower. A true home on the water after a day out.</p>
     <div class="rooms">
       <div class="room">
-        <img src="/images/master-suite.webp" alt="Master Suite with king bed and wood paneling" width="1600" height="1067" loading="lazy">
+        {% img "master-suite.webp", "Master Suite with king bed and wood paneling", "(max-width:760px) 100vw, 560px", "lazy", "" %}
         <h3>Master Suite</h3>
         <p>Our most spacious room: a king bed, dual vanity sinks, full private bathroom with an expansive shower, plenty of storage and a streaming TV.</p>
       </div>
       <div class="room">
-        <img src="/images/mermaid-room.webp" alt="The Mermaid Room's queen bed beneath a glass mermaid headboard" width="1600" height="1067" loading="lazy">
+        {% img "mermaid-room.webp", "The Mermaid Room's queen bed beneath a glass mermaid headboard", "(max-width:760px) 100vw, 560px", "lazy", "" %}
         <h3>The Mermaid Room</h3>
         <p>Tucked into the bow, with a queen bed beneath our signature glass mermaid headboard, a private bathroom with full shower and a streaming TV.</p>
       </div>
       <div class="room">
-        <img src="/images/salmon-room.webp" alt="The Salmon Room with queen bed and soft lighting" width="1600" height="1067" loading="lazy">
+        {% img "salmon-room.webp", "The Salmon Room with queen bed and soft lighting", "(max-width:760px) 100vw, 560px", "lazy", "" %}
         <h3>The Salmon Room</h3>
         <p>Cozy and calm, with a queen bed, private bathroom with shower, streaming TV, soft lighting and natural tones.</p>
       </div>
       <div class="room">
-        <img src="/images/orca-room-bunks.webp" alt="The Orca Room's upper and lower bunk beds" width="1600" height="1067" loading="lazy">
+        {% img "orca-room-bunks.webp", "The Orca Room's upper and lower bunk beds", "(max-width:760px) 100vw, 560px", "lazy", "" %}
         <h3>The Orca Room (bunks)</h3>
         <p>Twin bunks with its own bathroom and shower. Great for kids and teens, and usually used by crew when not booked.</p>
       </div>
     </div>
+    {{ book(site) }}
     <p style="margin-top:28px"><strong>Extra space on dry boat charters:</strong> high quality inflatable beds can be set up in the enclosed flybridge or on the open upper deck for a night under the stars.</p>
   </div>
 </section>
 
 <section>
   <div class="wrap mosaic" style="margin-top:0">
-    <figure class="w2 h2"><img src="/images/pilothouse.webp" alt="Supernova's pilothouse helm with Garmin electronics" width="1600" height="1067" loading="lazy"></figure>
-    <figure class="w2"><img src="/images/flybridge-lounge.webp" alt="Enclosed flybridge lounge with wraparound windows" width="1600" height="1067" loading="lazy"></figure>
-    <figure><img src="/images/flybridge-lounge-2.webp" alt="Flybridge seating and table at dusk" width="1600" height="1067" loading="lazy"></figure>
-    <figure><img src="/images/galley-cookies.webp" alt="Baking cookies in Supernova's galley" width="1350" height="1800" loading="lazy"></figure>
+    <figure class="w2 h2">{% img "pilothouse.webp", "Supernova's pilothouse helm with Garmin electronics", "(max-width:760px) 100vw, 560px", "lazy", "" %}</figure>
+    <figure class="w2">{% img "flybridge-lounge.webp", "Enclosed flybridge lounge with wraparound windows", "(max-width:760px) 100vw, 560px", "lazy", "" %}</figure>
+    <figure>{% img "flybridge-lounge-2.webp", "Flybridge seating and table at dusk", "(max-width:760px) 100vw, 560px", "lazy", "" %}</figure>
+    <figure>{% img "galley-cookies.webp", "Baking cookies in Supernova's galley", "(max-width:760px) 100vw, 560px", "lazy", "" %}</figure>
   </div>
 </section>
 
-{% include "cta.njk" %}
+{% set ctaImage = "supernova-at-anchor.webp" %}{% include "cta.njk" %}

@@ -15,23 +15,25 @@
 <meta property="og:image" content="{{ site.url }}/images/{{ ogImage or 'supernova-at-anchor.webp' }}">
 <meta name="twitter:card" content="summary_large_image">
 <link rel="icon" type="image/png" href="/favicon.png">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700;800&family=Source+Sans+3:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="/assets/css/site.css">
-{% if heroImage %}<link rel="preload" as="image" href="/images/{{ heroImage }}" fetchpriority="high">{% endif %}
-<script async src="https://www.googletagmanager.com/gtag/js?id={{ site.ga4 }}"></script>
-<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','{{ site.ga4 }}');</script>
+<link rel="preload" href="/assets/fonts/montserrat-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/assets/fonts/source-sans-3-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
+{% if hero and hero.image %}<link rel="preload" as="image" imagesrcset="{{ hero.image | heroSrcset }}" imagesizes="100vw" fetchpriority="high">{% endif %}
+<style>{% inlineCss %}</style>
+{% include "tracking-head.njk" %}
 {% if schema %}<script type="application/ld+json">{{ schema | safe }}</script>{% endif %}
+{% if breadcrumb %}<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"{{ site.url }}/"},{"@type":"ListItem","position":2,"name":"Expeditions","item":"{{ site.url }}/expeditions/"},{"@type":"ListItem","position":3,"name":{{ hero.h1 | json | safe }},"item":"{{ site.url }}{{ page.url }}"}]}</script>{% endif %}
 </head>
 <body class="{{ bodyClass }}">
+{% if site.gtm %}<noscript><iframe src="https://www.googletagmanager.com/ns.html?id={{ site.gtm }}" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>{% endif %}
 <a class="skip" href="#main">Skip to content</a>
 <header class="site-header" id="top">
   <div class="wrap header-inner">
-    <a class="brand" href="/" aria-label="Supernova Expeditions home">
-      <img src="/images/logo-mark.png" alt="" width="60" height="35">
+    <a class="brand" href="/" aria-label="Supernova Expeditions">
+      <img class="logo-desk" src="/images/logo-emblem-80.webp" srcset="/images/logo-emblem-80.webp 1x, /images/logo-emblem-160.webp 2x, /images/logo-emblem-240.webp 3x" alt="" width="80" height="80">
+      <img class="logo-phone" src="/images/logo-full-240.webp" srcset="/images/logo-full-240.webp 1x, /images/logo-full-360.webp 2x" alt="" width="89" height="72">
       <span class="brand-text"><span>Supernova</span><small>Expeditions</small></span>
     </a>
+    <a class="btn btn-book header-book" href="{{ site.bookHref }}">{{ site.bookLabel }}</a>
     <button class="menu-toggle" aria-expanded="false" aria-controls="primary-nav"><span class="sr">Menu</span><span class="bars"></span></button>
     <nav id="primary-nav" class="primary-nav" aria-label="Main">
       <ul>
@@ -46,7 +48,6 @@
         </li>
       {% endfor %}
       </ul>
-      <a class="btn btn-accent nav-cta" href="{{ site.bookHref }}">{{ site.bookLabel }}</a>
       <a class="nav-phone" href="{{ site.phoneHref }}">{{ site.phone }}</a>
     </nav>
   </div>
@@ -59,7 +60,7 @@
 <section class="newsletter-band">
   <div class="wrap newsletter-inner">
     <div>
-      <h2>Get first word on new expeditions</h2>
+      <p class="nl-title">Get first word on new expeditions</p>
       <p>Trip dates, open staterooms and new routes, a few times a season. No spam.</p>
     </div>
     <form class="newsletter-form" name="newsletter" method="POST" data-netlify="true" netlify-honeypot="company" action="/thanks/?f=newsletter">
@@ -76,10 +77,11 @@
 <footer class="site-footer">
   <div class="wrap footer-grid">
     <div>
-      <img src="/images/logo-full.png" alt="Supernova Expeditions logo" width="180" height="146" loading="lazy">
+      <img src="/images/logo-full-240.webp" srcset="/images/logo-full-240.webp 1x, /images/logo-full-480.webp 2x" alt="Supernova Expeditions logo" width="180" height="146" loading="lazy" class="footer-logo">
+      {% include "social.njk" %}
     </div>
     <div>
-      <h3>Expeditions</h3>
+      <p class="footer-title">Expeditions</p>
       <ul>
         <li><a href="/scuba-diving-expeditions/">Scuba Diving Expeditions</a></li>
         <li><a href="/private-charters/">Private Charters</a></li>
@@ -89,7 +91,7 @@
       </ul>
     </div>
     <div>
-      <h3>Supernova</h3>
+      <p class="footer-title">Supernova</p>
       <ul>
         <li><a href="/the-boat/">The Boat</a></li>
         <li><a href="/about-us/">About Captain Paul</a></li>
@@ -99,23 +101,22 @@
       </ul>
     </div>
     <div>
-      <h3>Get in Touch</h3>
+      <p class="footer-title">Get in Touch</p>
       <p><a href="{{ site.phoneHref }}">{{ site.phone }}</a><br><a href="mailto:{{ site.email }}">{{ site.email }}</a></p>
-      <p>{{ site.address.street }}<br>{{ site.address.city }}, {{ site.address.state }}</p>
-      <p><a href="{{ site.facebook }}" target="_blank" rel="noopener">Facebook</a></p>
+      <p>{{ site.address.street }}<br>{{ site.address.city }}, {{ site.address.state }} {{ site.address.zip }}</p>
     </div>
   </div>
   <div class="wrap footer-bottom">
-    <p>&copy; <span id="yr">2026</span> Supernova Expeditions. All rights reserved. · <a href="/privacy-policy/">Privacy Policy</a></p>
+    <p>&copy; <span id="yr">2026</span> Supernova Expeditions · <a href="/privacy-policy/">Privacy Policy</a></p>
+    <p>Website by <a href="https://www.saltwatermarketing.net/" target="_blank" rel="noopener">Saltwater Marketing</a></p>
   </div>
 </footer>
 
-<div class="mobile-cta"><a class="btn btn-ghost-light" href="{{ site.phoneHref }}">Call</a><a class="btn btn-accent" href="{{ site.bookHref }}">{{ site.bookLabel }}</a></div>
 
 <div class="nl-modal" id="nl-modal" role="dialog" aria-modal="true" aria-labelledby="nl-title" hidden>
   <div class="nl-card">
     <button class="nl-close" aria-label="Close">&times;</button>
-    <img src="/images/humpback-whale-tail.webp" alt="Humpback whale tail rising out of the Salish Sea" width="1800" height="1283" loading="lazy">
+    {% img "humpback-whale-tail.webp", "Humpback whale tail rising out of the Salish Sea", "460px" %}
     <div class="nl-body">
       <h2 id="nl-title">Join the Expedition List</h2>
       <p>Be the first to hear about new trip dates, open staterooms and special offers.</p>

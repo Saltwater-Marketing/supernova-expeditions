@@ -4,22 +4,23 @@ permalink: /calendar/
 title: "Trip Calendar & Booking Requests | Supernova"
 description: "See scheduled Supernova expeditions, open staterooms & booked dates, then request your own dates for a scuba, private or mountain bike yacht trip."
 pageScript: calendar.js
+hero:
+  image: "island-cabin.webp"
+  alt: "Historic log cabin in a meadow on a San Juan island"
+  h1: "Supernova Trip Calendar & Booking Requests"
+  jump: {"label": "See Scheduled Trips", "href": "#calendar"}
+  sub: "See what's scheduled, grab an open stateroom or pick your own dates for a private charter."
 ---
 <script type="application/json" id="trip-data">{{ trips | json | safe }}</script>
-<section class="bg-navy" style="padding:72px 0 56px">
-  <div class="wrap intro">
-    <span class="eyebrow">Trip calendar</span>
-    <h1 style="color:#fff">Supernova Trip Calendar & Booking Requests</h1>
-    <p class="lead">See what's scheduled, grab an open stateroom or pick your own dates for a private charter.</p>
-  </div>
-</section>
+{% from "macros.njk" import book %}
+{% include "hero.njk" %}
 
-<section class="bg-sand" style="padding-top:56px">
+<section class="bg-sand" id="calendar" style="padding-top:56px;scroll-margin-top:100px">
   <div class="wrap cal-layout">
     <div class="cal" aria-label="Trip calendar">
       <div class="cal-head">
         <button class="cal-nav" id="cal-prev" type="button" aria-label="Previous month">‹</button>
-        <h3 id="cal-label" aria-live="polite">Month</h3>
+        <p class="cal-month" id="cal-label" aria-live="polite">Month</p>
         <button class="cal-nav" id="cal-next" type="button" aria-label="Next month">›</button>
       </div>
       <div class="cal-grid" id="cal-grid">
@@ -96,7 +97,7 @@ pageScript: calendar.js
         <div class="field full"><label for="r-msg">What would you like to do?</label><textarea id="r-msg" name="message" rows="4" placeholder="Diving, hiking, paddling, a celebration, dietary needs..."></textarea></div>
         <div class="field full"><label class="consent"><input type="checkbox" name="sms_consent" value="yes"> I agree to receive text messages from Supernova Expeditions about my inquiry. Message and data rates may apply. Message frequency varies. Reply STOP to opt out or HELP for help.</label></div>
       </div>
-      <button class="btn btn-navy" type="submit" style="width:100%">Send My Request</button>
+      <button class="btn btn-book" type="submit" style="width:100%">Send My Request</button>
     </form>
   </div>
 </section>

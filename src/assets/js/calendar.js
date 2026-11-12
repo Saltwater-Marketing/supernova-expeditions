@@ -27,7 +27,7 @@
       on.forEach(function (t) { if (!status || rank[t.status] > rank[status]) status = t.status; });
       if (date < today) { btn.classList.add('past'); btn.disabled = true; }
       else if (status) { btn.classList.add(status); var dot = document.createElement('span'); dot.className = 'dot'; btn.appendChild(dot); }
-      var lbl = date.toDateString() + (status ? ', ' + status + ': ' + on.map(function(t){return t.title;}).join(', ') : ', available to request');
+      var lbl = d + ', ' + date.toDateString() + (status ? ', ' + status + ': ' + on.map(function(t){return t.title;}).join(', ') : ', available to request');
       btn.setAttribute('aria-label', lbl);
       if (s === selected) btn.classList.add('selected');
       grid.appendChild(btn);

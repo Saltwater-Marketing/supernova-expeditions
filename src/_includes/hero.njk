@@ -1,0 +1,20 @@
+{#- Banner: tall photo, H1 only, at most one jump button. Set in front matter:
+    hero: { image, alt, h1, jump: {label, href}, kicker, sub, pos } -#}
+<section class="hero{% if not hero.jump %} no-jump{% endif %}" style="padding:0">
+  <div class="hero-media">
+    <img src="/images/w/{{ hero.image | replace('.webp','') }}-{{ imgmeta[hero.image].widths[1] or imgmeta[hero.image].widths[0] }}.webp" srcset="{{ hero.image | heroSrcset }}" sizes="100vw" alt="{{ hero.alt }}" width="{{ imgmeta[hero.image].w }}" height="{{ imgmeta[hero.image].h }}" fetchpriority="high"{% if hero.pos %} style="object-position:{{ hero.pos }}"{% endif %}>
+    <div class="hero-content wrap"><h1>{{ hero.h1 | safe }}</h1></div>
+  </div>
+  {%- if hero.jump %}
+  <div class="hero-jump wrap"><a class="btn btn-jump" href="{{ hero.jump.href }}">{{ hero.jump.label }}</a></div>
+  {%- endif %}
+</section>
+{%- if hero.kicker or hero.sub %}
+<section class="hero-follow">
+  <div class="wrap">
+    {% if hero.kicker %}<p class="kicker">{{ hero.kicker | safe }}</p>{% endif %}
+    {% if hero.sub %}<p class="hero-sub">{{ hero.sub | safe }}</p>{% endif %}
+    <hr class="divider">
+  </div>
+</section>
+{%- endif %}

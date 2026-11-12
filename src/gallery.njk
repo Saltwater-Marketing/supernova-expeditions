@@ -3,37 +3,35 @@ layout: base.njk
 permalink: /gallery/
 title: "Photo Gallery | Supernova Expeditions"
 description: "Photos from Supernova Expeditions: the yacht, staterooms, landing craft, island hikes, paddling, diving & Northwest meals in the San Juan Islands."
+hero:
+  image: "swimming-rocks.webp"
+  alt: "Guests swimming off granite rocks in a clear lake"
+  h1: "Photo Gallery: Life Aboard Supernova"
+  jump: {"label": "See the Photos", "href": "#photos"}
+  sub: "Scenes from the San Juan Islands, the Gulf Islands and life aboard Supernova."
 ---
-<section class="bg-navy" style="padding:72px 0 56px">
-  <div class="wrap intro">
-    <span class="eyebrow">Gallery</span>
-    <h1 style="color:#fff">More Than a Yacht. Your Floating Basecamp.</h1>
-    <p class="lead">Scenes from the San Juan Islands, the Gulf Islands and life aboard Supernova.</p>
-  </div>
-</section>
-<section>
+{% from "macros.njk" import book %}
+{% include "hero.njk" %}
+<section id="photos" style="padding-top:56px;scroll-margin-top:100px">
   <div class="wrap">
-    <div class="mosaic">
-      <figure class="w2 h2"><img src="/images/supernova-at-anchor.webp" alt="Supernova at anchor beside a forested shore" width="1800" height="1350" loading="lazy"></figure>
-      <figure><img src="/images/old-growth-cedar.webp" alt="Family at the base of a giant old growth cedar" width="1350" height="1800" loading="lazy"></figure>
-      <figure><img src="/images/chef-salmon.webp" alt="Salmon fillets ready for dinner aboard" width="1350" height="1800" loading="lazy"></figure>
-      <figure class="w2"><img src="/images/landing-craft-inlet.webp" alt="Landing craft beached in a mountain inlet" width="1800" height="1350" loading="lazy"></figure>
-      <figure><img src="/images/humpback-whale-tail.webp" alt="Humpback whale tail" width="1800" height="1283" loading="lazy"></figure>
-      <figure><img src="/images/kayak-river-mouth.webp" alt="Kayak on a river mouth beach" width="1800" height="1350" loading="lazy"></figure>
-      <figure class="w2 h2"><img src="/images/beach-landing-paddleboards.webp" alt="Paddleboards on the beach with Supernova offshore" width="1800" height="1350" loading="lazy"></figure>
-      <figure><img src="/images/swimming-rocks.webp" alt="Swimming off granite rocks" width="1800" height="1350" loading="lazy"></figure>
-      <figure><img src="/images/island-cabin.webp" alt="Historic log cabin on an island" width="1800" height="1350" loading="lazy"></figure>
-      <figure><img src="/images/landing-craft-helm.webp" alt="At the helm of the landing craft" width="1800" height="1350" loading="lazy"></figure>
-      <figure><img src="/images/guests-dinner-table.webp" alt="Guests at dinner on the flybridge" width="1280" height="960" loading="lazy"></figure>
-      <figure class="w2"><img src="/images/kayak-view-supernova.webp" alt="Kayak view of Supernova on calm water" width="1800" height="1341" loading="lazy"></figure>
-      <figure><img src="/images/master-suite.webp" alt="Master Suite" width="1600" height="1067" loading="lazy"></figure>
-      <figure><img src="/images/mermaid-room.webp" alt="The Mermaid Room" width="1600" height="1067" loading="lazy"></figure>
-      <figure class="w2"><img src="/images/pilothouse.webp" alt="The pilothouse" width="1600" height="1067" loading="lazy"></figure>
-      <figure><img src="/images/flybridge-lounge.webp" alt="Flybridge lounge" width="1600" height="1067" loading="lazy"></figure>
-      <figure><img src="/images/galley-cookies.webp" alt="Cookies in the galley" width="1350" height="1800" loading="lazy"></figure>
-      <figure class="w2"><img src="/images/mountain-bike-ridge.webp" alt="Mountain biker above the sea" width="1400" height="761" loading="lazy"></figure>
-      <figure class="w2"><img src="/images/flybridge-solar-aerial.webp" alt="Aerial view of the flybridge" width="1600" height="1200" loading="lazy"></figure>
+    <ul class="jump-links">
+      {% for g in gallery %}<li><a href="#{{ g.id }}">{{ g.title }} <small>({{ g.photos.length }})</small></a></li>{% endfor %}
+    </ul>
+    {% for g in gallery %}
+    <div class="g-section" id="{{ g.id }}">
+      <h2>{{ g.title }} <small>{{ g.photos.length }} photo{{ "s" if g.photos.length != 1 }}</small></h2>
+      <div class="g-grid">
+        {% for ph in g.photos %}<button type="button" data-full="/images/w/{{ ph[0] | replace('.webp','') }}-{{ imgmeta[ph[0]].widths | last }}.webp" data-caption="{{ ph[1] }}" aria-label="Enlarge: {{ ph[1] }}">{% img ph[0], ph[1], "(max-width:760px) 50vw, 380px" %}</button>{% endfor %}
+      </div>
+      <p><a class="text-link" href="{{ g.link }}">{{ g.linkText }}</a></p>
     </div>
+    {% endfor %}
   </div>
 </section>
+<div class="lightbox" id="lightbox" hidden role="dialog" aria-modal="true" aria-label="Photo viewer">
+  <button class="lb-close" type="button" aria-label="Close">&times;</button>
+  <button class="lb-prev" type="button" aria-label="Previous photo">‹</button>
+  <button class="lb-next" type="button" aria-label="Next photo">›</button>
+  <figure style="margin:0"><img alt="" id="lb-img"><p id="lb-cap"></p></figure>
+</div>
 {% include "cta.njk" %}

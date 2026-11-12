@@ -1,0 +1,39 @@
+{%- if site.gtm -%}
+<!-- Google Tag Manager (delayed load, SWM standard) -->
+<script>
+window.dataLayer = window.dataLayer || [];
+(function (w, d, id) {
+  var done = false, events = ["scroll", "pointerdown", "touchstart", "keydown", "mousemove"];
+  function loadGTM() {
+    if (done) return; done = true;
+    events.forEach(function (e) { w.removeEventListener(e, loadGTM, { passive: true }); });
+    w.dataLayer.push({ "gtm.start": new Date().getTime(), event: "gtm.js" });
+    var j = d.createElement("script"); j.async = true;
+    j.src = "https://www.googletagmanager.com/gtm.js?id=" + id;
+    d.head.appendChild(j);
+  }
+  events.forEach(function (e) { w.addEventListener(e, loadGTM, { once: true, passive: true }); });
+  if (d.readyState === "complete") setTimeout(loadGTM, 4000);
+  else w.addEventListener("load", function () { setTimeout(loadGTM, 4000); });
+})(window, document, "{{ site.gtm }}");
+</script>
+<!-- End Google Tag Manager -->
+{%- elif site.ga4 -%}
+<!-- Temporary: GA4 with the same delayed loader until the client's GTM container ID is added to site.json ("gtm"). Then GA4 moves into GTM and this block switches off automatically. -->
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag("js", new Date()); gtag("config", "{{ site.ga4 }}");
+(function (w, d, id) {
+  var done = false, events = ["scroll", "pointerdown", "touchstart", "keydown", "mousemove"];
+  function load() {
+    if (done) return; done = true;
+    var j = d.createElement("script"); j.async = true;
+    j.src = "https://www.googletagmanager.com/gtag/js?id=" + id; d.head.appendChild(j);
+  }
+  events.forEach(function (e) { w.addEventListener(e, load, { once: true, passive: true }); });
+  if (d.readyState === "complete") setTimeout(load, 4000);
+  else w.addEventListener("load", function () { setTimeout(load, 4000); });
+})(window, document, "{{ site.ga4 }}");
+</script>
+{%- endif -%}
