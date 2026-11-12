@@ -1,0 +1,102 @@
+---
+layout: base.njk
+permalink: /calendar/
+title: "Trip Calendar & Booking Requests | Supernova"
+description: "See scheduled Supernova expeditions, open staterooms & booked dates, then request your own dates for a scuba, private or mountain bike yacht trip."
+pageScript: calendar.js
+---
+<script type="application/json" id="trip-data">{{ trips | json | safe }}</script>
+<section class="bg-navy" style="padding:72px 0 56px">
+  <div class="wrap intro">
+    <span class="eyebrow">Trip calendar</span>
+    <h1 style="color:#fff">Supernova Trip Calendar & Booking Requests</h1>
+    <p class="lead">See what's scheduled, grab an open stateroom or pick your own dates for a private charter.</p>
+  </div>
+</section>
+
+<section class="bg-sand" style="padding-top:56px">
+  <div class="wrap cal-layout">
+    <div class="cal" aria-label="Trip calendar">
+      <div class="cal-head">
+        <button class="cal-nav" id="cal-prev" type="button" aria-label="Previous month">‹</button>
+        <h3 id="cal-label" aria-live="polite">Month</h3>
+        <button class="cal-nav" id="cal-next" type="button" aria-label="Next month">›</button>
+      </div>
+      <div class="cal-grid" id="cal-grid">
+        <span class="cal-dow">Sun</span><span class="cal-dow">Mon</span><span class="cal-dow">Tue</span><span class="cal-dow">Wed</span><span class="cal-dow">Thu</span><span class="cal-dow">Fri</span><span class="cal-dow">Sat</span>
+      </div>
+      <div class="legend">
+        <span><i style="background:#d7efe3;border:2px solid var(--open)"></i>Scheduled trip, open</span>
+        <span><i style="background:#fbe9cc;border:2px solid var(--limited)"></i>Few spots left</span>
+        <span><i style="background:#f7dedc;border:2px solid var(--booked)"></i>Booked</span>
+        <span><i style="background:var(--sand);border:2px solid #b9c4cb"></i>Available to request</span>
+      </div>
+      <p class="cal-note" id="cal-note">Tap a date to start a booking request.</p>
+    </div>
+
+    <div>
+      <h2 style="font-size:1.6rem">Scheduled expeditions</h2>
+      {% set up = trips.trips | upcoming %}
+      {% if up.length %}
+      <div class="trip-list">
+        {% for t in up %}
+        <div class="trip">
+          <div class="date"><small>{{ t.start | fmtDate | truncate(3, true, '') }}</small><b>{{ t.start.slice(8,10) | int }}</b><small>{{ t.start.slice(0,4) }}</small></div>
+          <div>
+            <h3>{{ t.title }}</h3>
+            <p>{% if t.sample %}<span class="badge sample">Example</span>{% endif %}<span class="badge {{ t.status }}">{{ "Open" if t.status == "open" else ("Few spots left" if t.status == "limited" else "Booked") }}</span>{{ t.start | fmtDate }} to {{ t.end | fmtDate }}</p>
+            <p>{{ t.spots }}{% if t.price %} · {{ t.price }}{% endif %}</p>
+            {% if t.status != "booked" %}<button class="join" type="button" data-join="{{ t.start }}|{{ t.title }}">Request to join this trip</button>{% endif %}
+          </div>
+        </div>
+        {% endfor %}
+      </div>
+      {% else %}
+      <p>No scheduled expeditions are posted right now. Request your own dates below.</p>
+      {% endif %}
+    </div>
+  </div>
+</section>
+
+<section id="request">
+  <div class="wrap split" style="align-items:start">
+    <div>
+      <span class="eyebrow">Request dates</span>
+      <h2>Tell us when you'd like to go</h2>
+      <p>Pick a date on the calendar or fill in the form. Captain Paul will confirm availability and get back to you, usually within a day.</p>
+      <p>Requests aren't a booking until we confirm dates and pricing with you.</p>
+      <ul class="checklist">
+        <li>Scheduled expeditions are booked by the stateroom</li>
+        <li>Private charters book the whole boat, 2 nights minimum</li>
+        <li>All trips start and end in Anacortes, WA</li>
+      </ul>
+      <p>Prefer to talk? Call <a href="{{ site.phoneHref }}">{{ site.phone }}</a>.</p>
+    </div>
+    <form class="form-card" id="request-form" name="date-request" method="POST" data-netlify="true" netlify-honeypot="company" action="/thanks/?f=request">
+      <input type="hidden" name="form-name" value="date-request">
+      <input type="hidden" name="scheduled_trip" value="">
+      <p class="hp"><label>Company <input name="company"></label></p>
+      <div class="form-grid">
+        <div class="field"><label for="r-name">Name</label><input id="r-name" name="name" autocomplete="name" required></div>
+        <div class="field"><label for="r-phone">Phone</label><input id="r-phone" name="phone" type="tel" autocomplete="tel" required></div>
+        <div class="field full"><label for="r-email">Email</label><input id="r-email" name="email" type="email" autocomplete="email" required></div>
+        <div class="field full"><label for="r-trip">Trip type</label>
+          <select id="r-trip" name="trip_type" required>
+            <option value="">Choose a trip</option>
+            <option>Scuba Diving Expedition</option>
+            <option>Private Charter</option>
+            <option>Mountain Bike Expedition</option>
+            <option>Dry Boat Charter</option>
+            <option>Not sure yet</option>
+          </select></div>
+        <div class="field"><label for="r-date">Preferred start date</label><input id="r-date" name="start_date" type="date" required></div>
+        <div class="field"><label for="r-nights">Nights</label><input id="r-nights" name="nights" type="number" min="2" max="30" value="3"></div>
+        <div class="field"><label for="r-guests">Guests</label><input id="r-guests" name="guests" type="number" min="1" max="12" value="2"></div>
+        <div class="field"><label for="r-flex">Flexible dates?</label><select id="r-flex" name="flexible"><option>Yes, a few days either way</option><option>No, these dates only</option></select></div>
+        <div class="field full"><label for="r-msg">What would you like to do?</label><textarea id="r-msg" name="message" rows="4" placeholder="Diving, hiking, paddling, a celebration, dietary needs..."></textarea></div>
+        <div class="field full"><label class="consent"><input type="checkbox" name="sms_consent" value="yes"> I agree to receive text messages from Supernova Expeditions about my inquiry. Message and data rates may apply. Message frequency varies. Reply STOP to opt out or HELP for help.</label></div>
+      </div>
+      <button class="btn btn-navy" type="submit" style="width:100%">Send My Request</button>
+    </form>
+  </div>
+</section>

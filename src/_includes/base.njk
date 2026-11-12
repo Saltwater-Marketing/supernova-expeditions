@@ -1,0 +1,137 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>{{ title }}</title>
+<meta name="description" content="{{ description }}">
+<link rel="canonical" href="{{ site.url }}{{ page.url }}">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="{{ site.name }}">
+<meta property="og:title" content="{{ title }}">
+<meta property="og:description" content="{{ description }}">
+<meta property="og:url" content="{{ site.url }}{{ page.url }}">
+<meta property="og:image" content="{{ site.url }}/images/{{ ogImage or 'supernova-at-anchor.webp' }}">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" type="image/png" href="/favicon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700;800&family=Source+Sans+3:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/assets/css/site.css">
+{% if heroImage %}<link rel="preload" as="image" href="/images/{{ heroImage }}" fetchpriority="high">{% endif %}
+<script async src="https://www.googletagmanager.com/gtag/js?id={{ site.ga4 }}"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','{{ site.ga4 }}');</script>
+{% if schema %}<script type="application/ld+json">{{ schema | safe }}</script>{% endif %}
+</head>
+<body class="{{ bodyClass }}">
+<a class="skip" href="#main">Skip to content</a>
+<header class="site-header" id="top">
+  <div class="wrap header-inner">
+    <a class="brand" href="/" aria-label="Supernova Expeditions home">
+      <img src="/images/logo-mark.png" alt="" width="60" height="35">
+      <span class="brand-text"><span>Supernova</span><small>Expeditions</small></span>
+    </a>
+    <button class="menu-toggle" aria-expanded="false" aria-controls="primary-nav"><span class="sr">Menu</span><span class="bars"></span></button>
+    <nav id="primary-nav" class="primary-nav" aria-label="Main">
+      <ul>
+      {% for item in site.nav %}
+        <li class="{% if item.children %}has-sub{% endif %}">
+          <a href="{{ item.href }}"{% if page.url == item.href %} aria-current="page"{% endif %}>{{ item.label }}</a>
+          {% if item.children %}
+          <ul class="sub">
+            {% for c in item.children %}<li><a href="{{ c.href }}"{% if page.url == c.href %} aria-current="page"{% endif %}>{{ c.label }}</a></li>{% endfor %}
+          </ul>
+          {% endif %}
+        </li>
+      {% endfor %}
+      </ul>
+      <a class="btn btn-accent nav-cta" href="{{ site.bookHref }}">{{ site.bookLabel }}</a>
+      <a class="nav-phone" href="{{ site.phoneHref }}">{{ site.phone }}</a>
+    </nav>
+  </div>
+</header>
+
+<main id="main">
+{{ content | safe }}
+</main>
+
+<section class="newsletter-band">
+  <div class="wrap newsletter-inner">
+    <div>
+      <h2>Get first word on new expeditions</h2>
+      <p>Trip dates, open staterooms and new routes, a few times a season. No spam.</p>
+    </div>
+    <form class="newsletter-form" name="newsletter" method="POST" data-netlify="true" netlify-honeypot="company" action="/thanks/?f=newsletter">
+      <input type="hidden" name="form-name" value="newsletter">
+      <input type="hidden" name="source" value="footer">
+      <p class="hp"><label>Company <input name="company"></label></p>
+      <label class="sr" for="nl-email-footer">Email</label>
+      <input id="nl-email-footer" type="email" name="email" placeholder="Your email" required>
+      <button class="btn btn-accent" type="submit">Sign Up</button>
+    </form>
+  </div>
+</section>
+
+<footer class="site-footer">
+  <div class="wrap footer-grid">
+    <div>
+      <img src="/images/logo-full.png" alt="Supernova Expeditions logo" width="180" height="146" loading="lazy">
+    </div>
+    <div>
+      <h3>Expeditions</h3>
+      <ul>
+        <li><a href="/scuba-diving-expeditions/">Scuba Diving Expeditions</a></li>
+        <li><a href="/private-charters/">Private Charters</a></li>
+        <li><a href="/mountain-bike-expeditions/">Mountain Bike Expeditions</a></li>
+        <li><a href="/calendar/">Trip Calendar</a></li>
+        <li><a href="/pricing/">Pricing</a></li>
+      </ul>
+    </div>
+    <div>
+      <h3>Supernova</h3>
+      <ul>
+        <li><a href="/the-boat/">The Boat</a></li>
+        <li><a href="/about-us/">About Captain Paul</a></li>
+        <li><a href="/gallery/">Gallery</a></li>
+        <li><a href="/faq/">FAQ</a></li>
+        <li><a href="/contact/">Contact</a></li>
+      </ul>
+    </div>
+    <div>
+      <h3>Get in Touch</h3>
+      <p><a href="{{ site.phoneHref }}">{{ site.phone }}</a><br><a href="mailto:{{ site.email }}">{{ site.email }}</a></p>
+      <p>{{ site.address.street }}<br>{{ site.address.city }}, {{ site.address.state }}</p>
+      <p><a href="{{ site.facebook }}" target="_blank" rel="noopener">Facebook</a></p>
+    </div>
+  </div>
+  <div class="wrap footer-bottom">
+    <p>&copy; <span id="yr">2026</span> Supernova Expeditions. All rights reserved. · <a href="/privacy-policy/">Privacy Policy</a></p>
+  </div>
+</footer>
+
+<div class="mobile-cta"><a class="btn btn-ghost-light" href="{{ site.phoneHref }}">Call</a><a class="btn btn-accent" href="{{ site.bookHref }}">{{ site.bookLabel }}</a></div>
+
+<div class="nl-modal" id="nl-modal" role="dialog" aria-modal="true" aria-labelledby="nl-title" hidden>
+  <div class="nl-card">
+    <button class="nl-close" aria-label="Close">&times;</button>
+    <img src="/images/humpback-whale-tail.webp" alt="Humpback whale tail rising out of the Salish Sea" width="1800" height="1283" loading="lazy">
+    <div class="nl-body">
+      <h2 id="nl-title">Join the Expedition List</h2>
+      <p>Be the first to hear about new trip dates, open staterooms and special offers.</p>
+      <form name="newsletter" method="POST" data-netlify="true" netlify-honeypot="company" action="/thanks/?f=newsletter">
+        <input type="hidden" name="form-name" value="newsletter">
+        <input type="hidden" name="source" value="popup">
+        <p class="hp"><label>Company <input name="company"></label></p>
+        <label class="sr" for="nl-email-pop">Email</label>
+        <input id="nl-email-pop" type="email" name="email" placeholder="Your email" required>
+        <button class="btn btn-accent" type="submit">Sign Me Up</button>
+      </form>
+      <button class="nl-later" type="button">No thanks</button>
+    </div>
+  </div>
+</div>
+
+<script src="/assets/js/site.js" defer></script>
+{% if pageScript %}<script src="/assets/js/{{ pageScript }}" defer></script>{% endif %}
+</body>
+</html>

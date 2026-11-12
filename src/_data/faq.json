@@ -1,0 +1,23 @@
+[
+  { "group": "Booking & pricing", "items": [
+    { "q": "How do I book a trip?", "a": "Pick a date on our trip calendar or send a request with your dates and group size. Captain Paul confirms availability and pricing with you before anything is booked." },
+    { "q": "How is pricing set?", "a": "Scheduled expeditions are priced per stateroom per night, and each stateroom sleeps two. Private charters book the whole boat for $3,900 per night with Captain and Mate." },
+    { "q": "What's the minimum trip length?", "a": "Private charters are 2 nights and 3 days minimum. Scheduled scuba expeditions run 3 to 7 days, and mountain bike expeditions run 5 days and 4 nights." },
+    { "q": "Do you still offer dinner cruises?", "a": "No. We now focus on multi day expeditions so we can take guests further and do more." }
+  ]},
+  { "group": "What's included & what to bring", "items": [
+    { "q": "What's included on scheduled expeditions?", "a": "Captain, mate and private chef, chef prepared meals and beverages, 4 paddleboards and 2 kayaks, plus fuel, cleaning and damage deposit coverage. Scuba expeditions also include the landing craft and a certified divemaster." },
+    { "q": "Is food included on a private charter?", "a": "The base private charter is self catered. You can add a private chef with meals, house beer, wine and standard spirits starting at $800 per night." },
+    { "q": "What should I pack?", "a": "Warm layers and rain gear, soft sided bags and any gear for your activity, such as dive gear or your mountain bike. Trips into Canada need valid travel documents for every guest." }
+  ]},
+  { "group": "On the water", "items": [
+    { "q": "How many guests can come?", "a": "Crewed trips are limited to 6 paying guests under U.S. Coast Guard rules. Dry boat charters can sleep 8 in the staterooms plus 4 more on the top deck." },
+    { "q": "Does every stateroom have a shower?", "a": "Yes. All four staterooms have their own bathroom and shower, and there is a day head on the main level." },
+    { "q": "Is there internet aboard?", "a": "Yes. Supernova has Starlink internet, Wi-Fi throughout and streaming TVs in every stateroom and the main salon." },
+    { "q": "What happens if the weather turns?", "a": "Captain Paul plans each day around weather, tides and conditions. Routes and stops can change, and safety always comes first." }
+  ]},
+  { "group": "Departure & pickup", "items": [
+    { "q": "Where do trips start?", "a": "All trips start and end in Anacortes, Washington. Alternative pickup and drop off locations are available for an added fuel charge." },
+    { "q": "Where can we go?", "a": "The San Juan Islands, British Columbia's Gulf Islands and Vancouver Island, and on longer private expeditions as far as Desolation Sound and beyond." }
+  ]}
+]

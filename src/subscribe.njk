@@ -1,0 +1,21 @@
+---
+layout: base.njk
+permalink: /subscribe/
+title: "Join the Expedition List | Supernova Expeditions"
+description: "Sign up for Supernova Expeditions news: new trip dates, open staterooms, special offers & new routes in the San Juan Islands and Salish Sea."
+---
+<section class="bg-navy" style="padding:96px 0">
+  <div class="wrap intro center">
+    <span class="eyebrow">Subscribe</span>
+    <h1 style="color:#fff">Join the Expedition List</h1>
+    <p class="lead">Hear about special offers, schedules and news first.</p>
+    <form name="newsletter" method="POST" data-netlify="true" netlify-honeypot="company" action="/thanks/?f=newsletter" class="newsletter-form" style="margin:24px auto 0">
+      <input type="hidden" name="form-name" value="newsletter">
+      <input type="hidden" name="source" value="subscribe-page">
+      <p class="hp"><label>Company <input name="company"></label></p>
+      <label class="sr" for="nl-email-page">Email</label>
+      <input id="nl-email-page" type="email" name="email" placeholder="Your email" required>
+      <button class="btn btn-accent" type="submit" style="background:var(--teal);color:var(--navy)">Sign Up</button>
+    </form>
+  </div>
+</section>

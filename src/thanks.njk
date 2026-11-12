@@ -1,0 +1,16 @@
+---
+layout: base.njk
+permalink: /thanks/
+title: "Thank You | Supernova Expeditions"
+description: "Thanks for reaching out to Supernova Expeditions. Captain Paul will be in touch soon about your San Juan Islands yacht expedition."
+---
+<section style="padding:120px 0">
+  <div class="wrap intro center">
+    <span class="eyebrow">Received</span>
+    <h1>Thank you!</h1>
+    <p class="lead" id="thanks-msg">We've got your message. Captain Paul will get back to you soon, usually within a day.</p>
+    <p>Need us sooner? Call <a href="{{ site.phoneHref }}">{{ site.phone }}</a>.</p>
+    <div class="btn-row" style="justify-content:center"><a class="btn btn-navy" href="/expeditions/">Explore Expeditions</a><a class="btn btn-ghost" href="/">Back to Home</a></div>
+  </div>
+</section>
+<script>if(/f=newsletter/.test(location.search)){document.getElementById('thanks-msg').textContent="You're on the list. Watch your inbox for new trip dates and open staterooms.";}</script>

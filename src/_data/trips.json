@@ -1,0 +1,10 @@
+{
+  "_howTo": "Add one entry per scheduled trip. status: open (taking bookings), limited (a few spots or rooms left), booked (full / private). type: scuba, private, bike. Dates are YYYY-MM-DD. Delete the sample entries before launch.",
+  "trips": [
+    { "title": "Ride the Salish Sea: Inaugural Bike Expedition", "type": "bike", "start": "2027-05-17", "end": "2027-05-21", "status": "booked", "spots": "4 riders", "price": "$2,000 per person preview rate", "sample": true },
+    { "title": "San Juan Islands Scuba Expedition", "type": "scuba", "start": "2027-06-07", "end": "2027-06-11", "status": "open", "spots": "3 staterooms", "price": "From $1,700 per stateroom per night", "sample": true },
+    { "title": "Private Charter", "type": "private", "start": "2027-06-21", "end": "2027-06-27", "status": "booked", "spots": "Whole boat", "price": "", "sample": true },
+    { "title": "Ride the Salish Sea: Bike Expedition", "type": "bike", "start": "2027-07-12", "end": "2027-07-16", "status": "limited", "spots": "2 spots left", "price": "From $900 per person per night", "sample": true },
+    { "title": "San Juan Islands Scuba Expedition", "type": "scuba", "start": "2027-08-09", "end": "2027-08-13", "status": "open", "spots": "3 staterooms", "price": "From $1,700 per stateroom per night", "sample": true }
+  ]
+}

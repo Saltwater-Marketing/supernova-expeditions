@@ -1,0 +1,24 @@
+{
+  "name": "Supernova Expeditions",
+  "url": "https://supernovaexpeditions.com",
+  "phone": "360-800-3523",
+  "phoneHref": "tel:+13608003523",
+  "email": "paul@supernovaexpeditions.com",
+  "address": { "street": "910 11th Street, Suite B", "city": "Anacortes", "state": "WA", "zip": "98221", "country": "US" },
+  "facebook": "https://www.facebook.com/profile.php?id=61579800995474",
+  "ga4": "G-01R3VFS37W",
+  "bookLabel": "Request Dates",
+  "bookHref": "/calendar/#request",
+  "nav": [
+    { "label": "Expeditions", "href": "/expeditions/", "children": [
+      { "label": "Scuba Diving Expeditions", "href": "/scuba-diving-expeditions/" },
+      { "label": "Private Charters", "href": "/private-charters/" },
+      { "label": "Mountain Bike Expeditions", "href": "/mountain-bike-expeditions/" }
+    ]},
+    { "label": "The Boat", "href": "/the-boat/" },
+    { "label": "Calendar", "href": "/calendar/" },
+    { "label": "Pricing", "href": "/pricing/" },
+    { "label": "About", "href": "/about-us/" },
+    { "label": "Contact", "href": "/contact/" }
+  ]
+}

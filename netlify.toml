@@ -1,0 +1,38 @@
+[build]
+  command = "npm run build"
+  publish = "_site"
+
+[build.environment]
+  NODE_VERSION = "22"
+
+# Old GoDaddy paths
+[[redirects]]
+  from = "/ride-the-islands"
+  to = "/mountain-bike-expeditions/"
+  status = 301
+[[redirects]]
+  from = "/5-day-bike-itinerary"
+  to = "/mountain-bike-expeditions/#itinerary"
+  status = 301
+[[redirects]]
+  from = "/dinner-cruises"
+  to = "/private-charters/"
+  status = 301
+[[redirects]]
+  from = "/san-juan-charter-inquiry"
+  to = "/calendar/#request"
+  status = 301
+[[redirects]]
+  from = "/m/*"
+  to = "/"
+  status = 301
+
+[[headers]]
+  for = "/images/*"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Content-Type-Options = "nosniff"
+    Referrer-Policy = "strict-origin-when-cross-origin"

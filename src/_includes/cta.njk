@@ -1,0 +1,14 @@
+<section class="{{ ctaBg or '' }}">
+  <div class="wrap">
+    <div class="callout">
+      <div>
+        <h2>{{ ctaTitle or "Ready to plan your expedition?" }}</h2>
+        <p>{{ ctaText or "Check open dates on the trip calendar, or call Captain Paul to talk through what you want to do." }}</p>
+      </div>
+      <div class="btn-row">
+        <a class="btn btn-accent" href="/calendar/">See the Trip Calendar</a>
+        <a class="btn btn-ghost-light" href="{{ site.phoneHref }}">Call {{ site.phone }}</a>
+      </div>
+    </div>
+  </div>
+</section>
