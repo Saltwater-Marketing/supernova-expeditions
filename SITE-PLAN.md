@@ -48,7 +48,7 @@ Footer: Gallery, FAQ, Privacy Policy, newsletter signup.
 - Bike itinerary copy is long; tightened into a 5 day timeline but kept Paul's wording where possible.
 
 ## Nov 12 update to SWM standards
-- Banners: photo + H1 + one jump button only; distance line and subtitle in a white section under the banner. Every page has a photo banner.
+- Banners: a clean full-width photo with nothing printed on it (the boat is the product), then a white band with the H1 and one jump button; distance line and subtitle under that. Every page has a photo banner. Client feedback Nov 12: never cover the boat with words.
 - One booking label ("Request Dates"), one button per section, phone as a text link. Header Book button visible on phones; floating mobile buttons removed.
 - White header with the logo at 80px (desktop) / 72px (phones); Gallery added to the menu.
 - Footer: no heading tags, Facebook as an icon, "Website by Saltwater Marketing" credit.
