@@ -12,7 +12,12 @@
 <meta property="og:title" content="{{ title }}">
 <meta property="og:description" content="{{ description }}">
 <meta property="og:url" content="{{ site.url }}{{ page.url }}">
-<meta property="og:image" content="{{ site.url }}/images/{{ ogImage or 'supernova-at-anchor.webp' }}">
+{%- set _og = ogImage or (hero.image if hero and hero.image) or 'supernova-at-anchor.webp' %}
+<meta property="og:image" content="{{ site.url }}/images/og/{{ _og | replace('.webp','.jpg') }}">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="{{ (hero.alt if hero and hero.alt) or site.name }}">
+<meta property="og:locale" content="en_US">
 <meta name="twitter:card" content="summary_large_image">
 <link rel="icon" type="image/png" href="/favicon.png">
 <link rel="preload" href="/assets/fonts/montserrat-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
@@ -21,7 +26,8 @@
 <style>{% inlineCss %}</style>
 {% include "tracking-head.njk" %}
 {% if schema %}<script type="application/ld+json">{{ schema | safe }}</script>{% endif %}
-{% if breadcrumb %}<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"{{ site.url }}/"},{"@type":"ListItem","position":2,"name":"Expeditions","item":"{{ site.url }}/expeditions/"},{"@type":"ListItem","position":3,"name":{{ hero.h1 | json | safe }},"item":"{{ site.url }}{{ page.url }}"}]}</script>{% endif %}
+{% if breadcrumb %}<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"{{ site.url }}/"},{"@type":"ListItem","position":2,"name":"Expeditions","item":"{{ site.url }}/expeditions/"},{"@type":"ListItem","position":3,"name":{{ (crumb or hero.h1) | json | safe }},"item":"{{ site.url }}{{ page.url }}"}]}</script>
+{% elif crumb %}<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"{{ site.url }}/"},{"@type":"ListItem","position":2,"name":{{ crumb | json | safe }},"item":"{{ site.url }}{{ page.url }}"}]}</script>{% endif %}
 </head>
 <body class="{{ bodyClass }}">
 {% if site.gtm %}<noscript><iframe src="https://www.googletagmanager.com/ns.html?id={{ site.gtm }}" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>{% endif %}
