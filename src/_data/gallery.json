@@ -6,14 +6,40 @@
     ["old-growth-cedar.webp", "Family at the base of a giant old growth cedar"],
     ["island-cabin.webp", "Historic log cabin in a meadow on a remote island"],
     ["kayak-view-supernova.webp", "View from a kayak of Supernova anchored on glassy water"],
-    ["anchorage-landing-craft.webp", "Landing craft and paddleboards on a rocky beach with Supernova in the bay"]
+    ["anchorage-landing-craft.webp", "Landing craft and paddleboards on a rocky beach with Supernova in the bay"],
+    ["kayak-bow-supernova-cove.webp", "Kayaking toward Supernova anchored in a glassy forested cove"],
+    ["guests-swimming-cove.webp", "Guests swimming in a clear green cove off Supernova's stern"],
+    ["landing-craft-granite-slab.webp", "Kids riding the landing craft bow toward a huge granite slab"],
+    ["family-waterfall-landing-craft.webp", "Family on the landing craft bow ramp in front of a waterfall"],
+    ["kids-crab-pot.webp", "Kids grinning over a crab pot full of Dungeness crab at sunset"],
+    ["beach-campfire-sucia.webp", "Families around a beach campfire at sunset on Sucia Island"],
+    ["lakeside-trail-hike.webp", "Hikers climbing a rocky trail above a blue island lake"],
+    ["paddleboard-pink-reflection.webp", "Paddleboarder on mirror calm water reflecting pink evening clouds"],
+    ["kids-paddleboarding-cove.webp", "Two kids paddleboarding in a calm cove below madrona trees"],
+    ["landing-craft-pebble-beach.webp", "The landing craft off a pebble beach in late afternoon sun"],
+    ["sunset-beach-spit.webp", "Two guests watching the sunset from a sandy spit"],
+    ["patos-lighthouse-sunset.webp", "Patos Island lighthouse at sunset"]
   ]},
   { "id": "biking-wildlife", "title": "Biking & Wildlife", "link": "/mountain-bike-expeditions/", "linkText": "Mountain bike expeditions", "photos": [
     ["mountain-bike-ridge.webp", "Mountain biker on a rocky ridge trail high above the Salish Sea"],
+    ["riders-landing-craft-beach.webp", "Mountain bikers stepping off the landing craft onto a pebble beach"],
+    ["ebikes-deck-underway.webp", "E-mountain bikes racked on the upper deck as Supernova cruises the islands"],
+    ["crane-loading-ebikes.webp", "Crew lowering e-bikes from the deck crane onto the landing craft"],
+    ["riders-relaxing-deck.webp", "Riders relaxing on the upper deck with their bikes racked behind"],
     ["humpback-whale-tail.webp", "Humpback whale tail lifting out of the water"]
+  ]},
+  { "id": "diving", "title": "Diving", "link": "/scuba-diving-expeditions/", "linkText": "Scuba diving expeditions", "photos": [
+    ["divers-on-deck.webp", "Two divers in hooded wetsuits grinning on deck after a dive"],
+    ["pnw-scuba-reef.webp", "Lingcod resting among pink anemones on a Pacific Northwest reef"]
   ]},
   { "id": "the-boat", "title": "The Boat", "link": "/the-boat/", "linkText": "Tour the boat", "photos": [
     ["supernova-at-anchor.webp", "Supernova at anchor beside a forested shore"],
+    ["bow-sunset-silhouettes.webp", "Two guests on Supernova's bow at sunset"],
+    ["stern-toys-at-anchor.webp", "Supernova's stern at anchor with paddleboards, a kayak and the landing craft alongside"],
+    ["landing-craft-sunset-return.webp", "Heading back to Supernova in the landing craft at sunset"],
+    ["flybridge-pink-sunset.webp", "Watching a pink sunset over a calm bay from the flybridge"],
+    ["supernova-marina-dusk.webp", "Supernova at the dock at dusk with her cabin lights glowing"],
+    ["supernova-dock-profile.webp", "Supernova's full profile at the dock"],
     ["flybridge-solar-aerial.webp", "Aerial view of Supernova's flybridge and solar panels"],
     ["landing-craft-inlet.webp", "The landing craft beached in a green mountain inlet"],
     ["landing-craft-helm.webp", "At the helm of the landing craft"],
@@ -29,6 +55,7 @@
   { "id": "food-aboard", "title": "Food Aboard", "link": "/pricing/#private", "linkText": "Private chef add on", "photos": [
     ["guests-dinner-table.webp", "Guests sharing a meal around the table in the enclosed flybridge"],
     ["chef-salmon.webp", "Fresh salmon fillets ready for dinner in the galley"],
-    ["galley-cookies.webp", "Fresh cookies coming out of Supernova's galley"]
+    ["galley-cookies.webp", "Fresh cookies coming out of Supernova's galley"],
+    ["galley-crab-cakes.webp", "Salmon cakes sizzling on the griddle in the galley"]
   ]}
 ]

@@ -152,6 +152,7 @@ section{padding:88px 0}
 .split.rev>:first-child{order:2}
 .split img{border-radius:var(--radius);width:100%;aspect-ratio:4/3;object-fit:cover}
 .split img.tall{aspect-ratio:4/5}
+.prose-photo{border-radius:var(--radius);width:100%;margin:24px 0}
 @media (max-width:860px){.split{grid-template-columns:1fr;gap:28px}.split.rev>:first-child{order:0}section{padding:64px 0}}
 
 /* Expedition cards */
