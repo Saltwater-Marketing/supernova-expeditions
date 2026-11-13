@@ -4,7 +4,7 @@
   var grid = document.getElementById('cal-grid'), label = document.getElementById('cal-label'), note = document.getElementById('cal-note');
   var form = document.getElementById('request-form');
   var MONTHS = ['January','February','March','April','May','June','July','August','September','October','November','December'];
-  var TYPES = { scuba: 'Scuba Diving Expedition', private: 'Private Charter', bike: 'Mountain Bike Expedition' };
+  var TYPES = { scuba: 'Scuba Diving Expedition', private: 'Private Charter', bike: 'Mountain Bike Expedition', dry: 'Dry Boat Charter' };
   var rank = { booked: 3, limited: 2, open: 1 };
   var today = new Date(); today.setHours(0,0,0,0);
   function iso(d) { return d.getFullYear() + '-' + String(d.getMonth()+1).padStart(2,'0') + '-' + String(d.getDate()).padStart(2,'0'); }

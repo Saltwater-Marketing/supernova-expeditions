@@ -38,10 +38,6 @@
       "href": "/the-boat/"
     },
     {
-      "label": "Calendar",
-      "href": "/calendar/"
-    },
-    {
       "label": "Pricing",
       "href": "/pricing/"
     },
@@ -51,11 +47,21 @@
     },
     {
       "label": "About",
-      "href": "/about-us/"
-    },
-    {
-      "label": "Contact",
-      "href": "/contact/"
+      "href": "/about-us/",
+      "children": [
+        {
+          "label": "Meet Captain Paul",
+          "href": "/about-us/"
+        },
+        {
+          "label": "FAQ",
+          "href": "/faq/"
+        },
+        {
+          "label": "Contact",
+          "href": "/contact/"
+        }
+      ]
     }
   ],
   "gtm": "",
