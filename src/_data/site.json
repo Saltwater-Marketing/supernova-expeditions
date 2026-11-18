@@ -20,12 +20,12 @@
       "href": "/expeditions/",
       "children": [
         {
-          "label": "Scuba Diving Expeditions",
-          "href": "/scuba-diving-expeditions/"
-        },
-        {
           "label": "Private Charters",
           "href": "/private-charters/"
+        },
+        {
+          "label": "Scuba Diving Expeditions",
+          "href": "/scuba-diving-expeditions/"
         },
         {
           "label": "Mountain Bike Expeditions",
