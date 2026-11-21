@@ -1,10 +1,14 @@
 {
-  "_howTo": "Add one entry per scheduled trip. status: open (taking bookings), limited (a few spots or rooms left), booked (full / private). type: scuba, private, bike. Dates are YYYY-MM-DD. Delete the sample entries before launch.",
+  "_howTo": "Add one entry per scheduled trip. status: open (taking bookings), limited (a few spots or rooms left), booked (full / private). type: scuba, private, bike. Dates are YYYY-MM-DD. Past trips drop off the list automatically.",
   "trips": [
-    { "title": "Ride the Salish Sea: Inaugural Bike Expedition", "type": "bike", "start": "2027-05-17", "end": "2027-05-21", "status": "booked", "spots": "4 riders", "price": "$2,000 per person preview rate", "sample": true },
-    { "title": "San Juan Islands Scuba Expedition", "type": "scuba", "start": "2027-06-07", "end": "2027-06-11", "status": "open", "spots": "3 staterooms", "price": "From $1,700 per stateroom per night", "sample": true },
-    { "title": "Private Charter", "type": "private", "start": "2027-06-21", "end": "2027-06-27", "status": "booked", "spots": "Whole boat", "price": "", "sample": true },
-    { "title": "Ride the Salish Sea: Bike Expedition", "type": "bike", "start": "2027-07-12", "end": "2027-07-16", "status": "limited", "spots": "2 spots left", "price": "From $900 per person per night", "sample": true },
-    { "title": "San Juan Islands Scuba Expedition", "type": "scuba", "start": "2027-08-09", "end": "2027-08-13", "status": "open", "spots": "3 staterooms", "price": "From $1,700 per stateroom per night", "sample": true }
+    { "title": "Private Charter", "type": "private", "start": "2027-05-20", "end": "2027-05-31", "status": "booked", "spots": "Whole boat", "price": "" },
+    { "title": "Ride the Salish Sea: Bike Expedition", "type": "bike", "start": "2027-06-02", "end": "2027-06-08", "status": "booked", "spots": "Sold out", "price": "" },
+    { "title": "Private Charter", "type": "private", "start": "2027-07-06", "end": "2027-07-14", "status": "booked", "spots": "Whole boat", "price": "" },
+    { "title": "Ride the Salish Sea: Bike Expedition", "type": "bike", "start": "2027-07-16", "end": "2027-07-20", "status": "open", "spots": "Rooms available", "price": "" },
+    { "title": "Ride the Salish Sea: Bike Expedition", "type": "bike", "start": "2027-07-30", "end": "2027-08-03", "status": "open", "spots": "Rooms available", "price": "" },
+    { "title": "Private Charter", "type": "private", "start": "2027-08-04", "end": "2027-08-22", "status": "booked", "spots": "Whole boat", "price": "" },
+    { "title": "Ride the Salish Sea: Bike Expedition", "type": "bike", "start": "2027-08-27", "end": "2027-08-31", "status": "open", "spots": "Rooms available", "price": "" },
+    { "title": "Ride the Salish Sea: Bike Expedition", "type": "bike", "start": "2027-09-10", "end": "2027-09-14", "status": "open", "spots": "Rooms available", "price": "" },
+    { "title": "Ride the Salish Sea: Bike Expedition", "type": "bike", "start": "2027-09-24", "end": "2027-09-28", "status": "open", "spots": "Rooms available", "price": "" }
   ]
 }
