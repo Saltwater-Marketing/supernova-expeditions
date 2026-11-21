@@ -13,7 +13,7 @@ Edit `src/_data/trips.json`. One entry per scheduled trip:
 - `type`: `scuba`, `private` or `bike`
 - `status`: `open` (taking bookings), `limited` (few spots left), `booked` (full or private)
 - Dates are YYYY-MM-DD. Past trips drop off the list automatically.
-- **Delete every entry with `"sample": true` before launch.**
+- Optional `"sample": true` adds an "Example" badge (used only for placeholder trips).
 
 Dates with no trip show as "available to request." Clicking any open date fills in the booking request form.
 
